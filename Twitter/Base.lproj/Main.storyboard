@@ -18,7 +18,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0E-Gg-kTh">
                                 <rect key="frame" x="122.5" y="510" width="130" height="55"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="EHr-xv-MZ3"/>
                                     <constraint firstAttribute="height" constant="55" id="VsW-3t-bdS"/>
@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="-5674.3999999999996" y="-1791.4542728635683"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="2wo-1J-Ra9">
             <objects>
-                <tableViewController id="DEZ-r8-DbN" sceneMemberID="viewController">
+                <tableViewController id="DEZ-r8-DbN" customClass="HomeTableTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="G5W-p5-p63">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,14 @@
                             <outlet property="delegate" destination="DEZ-r8-DbN" id="Rwi-mt-hcS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="oWa-R2-mng"/>
+                    <navigationItem key="navigationItem" title="Home" id="oWa-R2-mng">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="nOt-ga-ib7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogout:" destination="DEZ-r8-DbN" id="Ow1-mv-hrZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BBE-5O-raB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,6 +102,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UeB-8R-3f6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="DEZ-r8-DbN" kind="relationship" relationship="rootViewController" id="wIY-yB-QFL"/>
