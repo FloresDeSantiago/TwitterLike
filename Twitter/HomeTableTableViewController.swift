@@ -21,6 +21,9 @@ class HomeTableTableViewController: UITableViewController {
         
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
+        // ???
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 150
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -91,7 +94,8 @@ class HomeTableTableViewController: UITableViewController {
             
         }
         
-        
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
         
         return cell
     }
